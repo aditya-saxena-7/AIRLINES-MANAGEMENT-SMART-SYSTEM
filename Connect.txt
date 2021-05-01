@@ -1,0 +1,68 @@
+CREATE TABLE CONNECT(
+HOP_ID VARCHAR(15) ,
+DISTANCE DECIMAL(7,2) NOT NULL,
+BASE_FARE DECIMAL(9,2) NOT NULL,
+AIRPLANE VARCHAR(25) NOT NULL,
+ARRIVAL_AIRPORT VARCHAR(25) NOT NULL,
+ARRIVAL_TIME DATE NOT NULL,
+DEPART_AIRPORT VARCHAR(25) NOT NULL,
+DEPART_TIME DATE NOT NULL,
+CONSTRAINT HOP_PK PRIMARY KEY (HOP_ID),
+CONSTRAINT HOP_APLNE_FK FOREIGN KEY (AIRPLANE)
+REFERENCES AIRPLANE(AIRPLANE_NO),
+CONSTRAINT HOP_ARVL_ARPRT_FK
+FOREIGN KEY(ARRIVAL_AIRPORT)REFERENCES
+AIRPORT(AIRPORT_CODE),
+CONSTRAINT HOP_DRPT_ARPRT_FK FOREIGN KEY(DEPART_AIRPORT) REFERENCES AIRPORT(AIRPORT_CODE)
+);
+
+INSERT ALL
+INTO CONNECT VALUES
+('AX7458',600,200,'AB751','MUM',to_date('2021/12/27:12:00:00AM','yyyy/mm/d
+d:hh:mi:ssam'),'PTN',to_date('2021/12/26:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam') )
+
+INTO CONNECT VALUES
+( 'AX7459',600,200,'CD851','BNG',to_date('2021/12/27:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam'),'CHG',to_date('2021/12/26:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam') )
+
+INTO CONNECT VALUES
+( 'AX7460',600,200,'EF100','CHG',to_date('2021/12/27:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam'),'MUM',to_date('2021/12/26:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam') )
+
+INTO CONNECT VALUES
+( 'AX7461',600,200,'GH785','NVM',to_date('2021/12/27:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam'),'CHN',to_date('2021/12/26:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam') )
+
+INTO CONNECT VALUES
+( 'AX8462',600,200,'IJ747','KLK',to_date('2021/12/27:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam'),'MUM',to_date('2021/12/26:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam') )
+
+INTO CONNECT VALUES
+('AX7488',600,200,'AB751','MUM',to_date('2021/12/27:12:00:00AM','yyyy/mm/d
+d:hh:mi:ssam'),'KLK',to_date('2021/12/26:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam') )
+
+INTO CONNECT VALUES
+( 'AX7479',600,200,'CD851','BNG',to_date('2021/12/27:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam'),'PTN',to_date('2021/12/26:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam') )
+
+INTO CONNECT VALUES
+( 'AX7560',600,200,'EF100','BNG',to_date('2021/12/27:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam'),'MUM',to_date('2021/12/26:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam') )
+
+INTO CONNECT VALUES
+( 'AX7661',600,200,'GH785','NVM',to_date('2021/12/27:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam'),'KLK',to_date('2021/12/26:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam') )
+
+INTO CONNECT VALUES
+( 'AX7762',600,200,'IJ747','MUM',to_date('2021/12/27:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam'),'NVM',to_date('2021/12/26:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam') )
