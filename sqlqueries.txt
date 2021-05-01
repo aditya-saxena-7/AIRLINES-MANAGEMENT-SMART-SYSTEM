@@ -1,0 +1,122 @@
+//SQL Query
+SELECT FNAME, LNAME 
+FROM TOURIST 
+WHERE ID IN (SELECT ID
+FROM TOURIST_INFO 
+WHERE FLIGHT='giri12dec');
+
+//GROUP BY & aggregate function
+SELECT USER_EMAIL, COUNT (NO_OF_TRAVELLERS) 
+FROM AIRLINE_TRAVELLER 
+WHERE USER_EMAIL IN (SELECT EMAIL 
+FROM EMAIL_ID 
+WHERE TYPE_OF_USER ='NORMAL') 
+GROUP BY USER_EMAIL;
+
+//Join
+SELECT * 
+FROM AIRLINE_TRAVELLER 
+INNER JOIN FARE ON
+AIRLINE_TRAVELLER.FLIGHT_TRIP_ID = COST.FLIGHT_TRIP_ID;
+
+//Alter
+ALTER TABLE COST ADD (CHECKING VARCHAR(25), CONSTRAINT FK
+FOREIGN KEY(CHECKING) REFERENCES AIRPORT(AIRPORT_CODE));
+
+//Dropping constraints and columns
+ALTER TABLE COST DROP CONSTRAINT FK;
+ALTER TABLE COST DROP COLUMN CHECKING;
+
+//Union
+SELECT FNAME, LNAME 
+FROM TOURIST 
+WHERE ID IN(SELECT ID
+FROM TOURIST_INFO 
+WHERE FLIGHT='giri17dec')
+UNION
+SELECT FNAME, LNAME 
+FROM TOURIST 
+WHERE ID IN(SELECT ID 
+FROM TOURIST_INFO 
+WHERE FLIGHT='sham22jan');
+
+//DROP
+DROP table COST;
+
+//Trigger
+delimiter \\
+create trigger update_cost
+after update on COST
+for each row
+begin 
+     if 'FINAL_AMOUNT' >= 175 then 
+        update FINAL_AMOUNT 
+        set FINAL_AMOUNT=FINAL_AMOUNT*DISCOUNT
+        where TAX='10' AND CURRENCY='AED';
+        end if;
+	end;
+    //
+update IGNORE capacity,Flight set `economy seats`= 3 where capacity.`aircraft_Reg. No.`=140 AND Flight.date="2021/05/18";
+Select * from capacity where  `aircraft_Reg. No.`=101
+select * from fares where Flight_Number=402 AND Flight_date="2020-05-18" and class_name="economy";
+drop procedure update_seats
+delimiter \\
+create procedure update_seats(IN p1 varchar(30),IN p2 INT,in p3 DATE)
+begin 
+        update IGNORE  capacity INNER JOIN flight_has_class ON capacity.`aircraft_Reg. No.`=flight_has_class.`Flight_aircraft_Reg. No.`
+        set `economy seats`=`economy seats`-1
+        where flight_has_class.class_name=p1 AND Flight_has_class.Flight_Number=p2 AND flight_has_class.Flight_date =p3;
+	end;
+    //
+    call update_seats('economy',402,"2020-05-18");
+    select * from capacity where  `aircraft_Reg. No.`=101
+    drop trigger delete_flight
+    delimiter \\
+create trigger delete_flight
+after update on capacity
+for each row
+begin 
+     if 'economy seats'= 0 AND 'business seats'=0 AND 'premium economy seats'=0 AND 'first class seats'=0 then 
+        delete from flight where number=2471 AND date = "2020-05-18";
+        end if;
+	end;
+    //
+update IGNORE capacity set `economy seats`= 0,`business seats`=0 , `premium economy seats`=0 , `first class seats`=0  where `aircraft_Reg. No.`=301
+select * from capacity  where `aircraft_Reg. No.`=301
+select * from flight where `aircraft_Reg. No.`=301 and date="2020-05-18";
+delimiter \\
+create PROCEDURE show_higher_class(IN p1 VARCHAR(30),OUT p2 VARCHAR(30))
+begin 
+     if p1='economy' then 
+     set p2='business class';
+     elseif p1='business class' then
+     set p2='first class';
+     else 
+     set p2= 'first class';
+     end if;
+END 
+\\
+Call show_higher_class ( 'economy',@p2);
+select * from class where name=@p2;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

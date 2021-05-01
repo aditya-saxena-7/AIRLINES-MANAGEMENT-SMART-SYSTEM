@@ -1,0 +1,28 @@
+CREATE TABLE TOURIST(
+ID NUMBER,
+PHONE INTEGER,
+FNAME VARCHAR(25) NOT NULL,
+LNAME VARCHAR(25) NOT NULL,
+CONSTRAINT TRAVELLER_PK PRIMARY KEY (ID)
+);
+
+INSERT INTO TOURIST
+VALUES(traveller_id_increment.nextVal,4567891231,'Giri','Prasad' );
+INSERT INTO TOURIST
+VALUES( traveller_id_increment.nextval,4567891241,'Aditya','Saxena' );
+INSERT INTO TOURIST
+VALUES( traveller_id_increment.nextVal,4567891274,'Bala','Yadav' );
+INSERT INTO TOURIST
+VALUES(traveller_id_increment.nextVal,4567891278,'Shobhi','Agrawal);
+INSERT INTO TOURIST
+VALUES( traveller_id_increment.nextVal,4567891214,'Nitish','Salwan' );
+INSERT INTO TOURIST
+VALUES(traveller_id_increment.nextVal,4567891231,'Giri','Prasad' );
+INSERT INTO TOURIST
+VALUES( traveller_id_increment.nextval,4567891241,'Aditya','Saxena' );
+INSERT INTO TOURIST
+VALUES( traveller_id_increment.nextVal,4567891274,'Bala','Yadav' );
+INSERT INTO TOURIST
+VALUES(traveller_id_increment.nextVal,4567891278,'Shobhi','Agrawal);
+INSERT INTO TOURIST
+VALUES( traveller_id_increment.nextVal,4567891214,'Nitish','Salwan' );

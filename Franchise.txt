@@ -1,0 +1,16 @@
+CREATE TABLE FRANCHISE(
+COMPANY_ID VARCHAR(100) , 
+COMPANY_NAME VARCHAR(100) NOT NULL,
+COMPANY_CITY VARCHAR(100) NOT NULL, 
+CONSTRAINT COMPANY_PKEY PRIMARY KEY (COMPANY_ID)
+);
+
+INSERT ALL
+INTO FRANCHISE VALUES( 'AB' , 'Spice Jet','Mumbai') 
+INTO FRANCHISE VALUES( 'CD' , 'Indigo Airlines','Banglore') 
+INTO FRANCHISE VALUES( 'EF' , 'AirIndia Airlines','Kolkata') 
+INTO FRANCHISE VALUES( 'GH' , 'Kingfisher Airlines','Patna') 
+INTO FRANCHISE VALUES( 'IJ' , 'Vistara Airlines','Mumbai') 
+INTO FRANCHISE VALUES( 'KL' , 'Thar Airlines','Delhi') 
+INTO FRANCHISE VALUES( 'MN' , 'AirAsia Airlines','Chandigarh') 
+INTO FRANCHISE VALUES( 'OP' , 'Jet Airways','Chennai') 
