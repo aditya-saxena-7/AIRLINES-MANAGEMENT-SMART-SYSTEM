@@ -1,0 +1,63 @@
+CREATE TABLE AIRLINE_TRAVEL(
+FLIGHT_TRIP_ID VARCHAR(15) ,
+NO_OF_TRAVELLERS NUMBER NOT NULL,
+ARRIVAL_AIRPORT VARCHAR(25) NOT NULL,
+ARRIVAL_TIME DATE NOT NULL,
+DEPART_AIRPORT VARCHAR(25) NOT NULL,
+DEPART_TIME DATE NOT NULL,
+USER_EMAIL VARCHAR(25) NOT NULL,
+CONSTRAINT FLIGHT_TRIP_PK PRIMARY KEY
+(FLIGHT_TRIP_ID),
+CONSTRAINT FLGHT_TRIP_USER_FK FOREIGN KEY (USER_EMAIL) REFERENCES END_USER(EMAIL) ON DELETE SET NULL
+);
+
+INSERT ALL
+INTO AIRLINE_TRAVEL 
+VALUES('giri23apr',1,'NVM',to_date('2021/12/27:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam'),'MUM',to_date('2021/12/26:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam'),'abc@gmail.com' )
+
+INTO AIRLINE_TRAVEL
+VALUES('aditya11nvm',1,'CHG',to_date('2021/12/27:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam'),'BNG',to_date('2021/12/26:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam'),'def@gmail.com' )
+
+INTO AIRLINE_TRAVEL
+VALUES('yash31dec',1,'BNG',to_date('2021/11/27:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam') ,'KLK',to_date('2021/11/26:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam'),'ghi@gmail.com' )
+
+INTO AIRLINE_TRAVEL
+VALUES('shoaga37dec',1,'BNG',to_date('2021/11/27:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam'),'CHG',to_date('2021/11/26:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam'),'jkl@gmail.com' )
+
+INTO AIRLINE_TRAVEL
+VALUES('bala17jan',1,'MUM',to_date('2021/11/27:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam')'PTN',to_date('2021/11/26:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam'),'mno@gmail.com' )
+
+INTO AIRLINE_TRAVEL 
+VALUES('akshit12may',1,'MUM',to_date('2021/11/27:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam'),'NVM',to_date('2021/11/26:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam'),'pqr@gmail.com' )
+
+INTO AIRLINE_TRAVEL
+VALUES('parth09mrh',1,'BNG',to_date('2021/11/27:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam'),'CHG',to_date('2021/11/26:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam'),'stu@gmail.com' )
+
+INTO AIRLINE_TRAVEL
+VALUES('yash31dec',1,'KLK',to_date('2021/11/27:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam') ,'CHN',to_date('2021/11/26:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam'),'vwx@gmail.com' )
+
+INTO AIRLINE_TRAVEL
+VALUES('avi20nov',1,'CHG',to_date('2021/11/27:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam'),'BNG',to_date('2021/11/26:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam'),'yza@gmail.com' )
+
+INTO AIRLINE_TRAVEL
+VALUES('sham21feb',1,'PTN',to_date('2021/11/27:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam')'MUM',to_date('2021/11/26:12:00:00AM',
+'yyyy/mm/dd:hh:mi:ssam'),'bcd@gmail.com' )
