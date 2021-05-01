@@ -1,0 +1,17 @@
+CREATE TABLE AIRPORT(
+AIRPORT_ID VARCHAR(25),
+AIRPORT_NAME VARCHAR(100) NOT NULL,
+AIRPORT_LOCATION VARCHAR(100) NOT NULL,
+AIRPORT_CITY VARCHAR(100) NOT NULL,
+AIRPORT_STATE VARCHAR(100) NOT NULL,
+AIRPORT_COUNTRY	VARCHAR(100) NOT NULL,
+);
+
+INSERT ALL
+INTO AIRPORT VALUES( 'MUM' , 'Chatrapati Shivaji International Airport', '30#N','Mumbai','Maharashtra','India')
+INTO AIRPORT VALUES( 'BNG' , 'Benguluru International Airport', '87#S','Banglore','Andhra Pradesh','India')
+INTO AIRPORT VALUES( 'CHN' , 'Chennai International Airport', '90#W','Chennai','Tamil Nadu','India')
+INTO AIRPORT VALUES( 'KLK' , 'Kolkata International Airport', '11#E','Kolkata','West Bengal','India')
+INTO AIRPORT VALUES( 'CHG' , 'Chandigarh International Airport', '55#N','Chandigarh','Punjab','India')
+INTO AIRPORT VALUES( 'NVM' , 'Navi Mumbai International Airport', '04#E','Navi Mumbai','Maharashtra','India')
+INTO AIRPORT VALUES( 'PTN' , 'Patna International Airport', '77#W','Patna','Bihar','India')
